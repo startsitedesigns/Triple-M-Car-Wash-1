@@ -1,364 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Triple M Car Wash | Miami, FL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triple M Car Wash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+        header {
+            background-color: #1e3c72;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
 
-<style>
-:root {
-  --cyan: #1ccfd3;
-  --dark: #0b0b0b;
-  --gray: #f8f8f8;
-  --text: #444;
-}
+        header img {
+            width: 150px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        .hero {
+            background: url('car-wash-background.jpg') no-repeat center center/cover;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-html {
-  scroll-behavior: smooth;
-}
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text);
-  background: white;
-  overflow-x: hidden;
-}
+        .hero p {
+            font-size: 1.5em;
+        }
 
-/* ---------- NAVBAR ---------- */
-header {
-  background: white;
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+        .btn {
+            background-color: #00bcd4;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-.nav {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+        .btn:hover {
+            background-color: #008c8c;
+        }
 
-.nav h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.7rem;
-  color: var(--dark);
-}
+        .services, .gallery, .reviews, .contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-.nav span {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--cyan);
-}
+        .services h2, .gallery h2, .reviews h2, .contact h2 {
+            font-size: 2.5em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
 
-nav a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-  transition: 0.3s;
-}
+        .service-item {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
 
-nav a:hover {
-  color: var(--cyan);
-}
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
 
-.logo {
-  height: 60px;
-  margin-left: 20px;
-  border-radius: 12px;
-  border: 2px solid var(--cyan);
-}
+        .service-item img {
+            width: 80%;
+            margin-bottom: 20px;
+        }
 
-/* ---------- HERO ---------- */
-.hero {
-  position: relative;
-  background: linear-gradient(135deg, var(--cyan), #0fb9bd);
-  color: white;
-  padding: 140px 20px 120px;
-  overflow: hidden;
-  text-align: center;
-}
+        .before-after {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: rgba(255,255,255,0.15);
-  transform: skewX(-20deg);
-  animation: water 6s infinite linear;
-  z-index: 0;
-}
+        .before-after img {
+            width: 45%;
+            border-radius: 10px;
+        }
 
-@keyframes water {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 15px;
-  z-index: 1;
-  position: relative;
-}
+        .contact-form button {
+            background-color: #1e3c72;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  z-index: 1;
-  position: relative;
-}
+        .contact-form button:hover {
+            background-color: #00bcd4;
+        }
 
-.btn {
-  display: inline-block;
-  padding: 14px 36px;
-  background: var(--dark);
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  z-index: 1;
-  position: relative;
-}
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 
-.btn:hover {
-  background: white;
-  color: var(--dark);
-  transform: translateY(-3px);
-}
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .service-item {
+                width: 100%;
+            }
 
-/* ---------- VAN ANIMATION ---------- */
-.car {
-  position: absolute;
-  bottom: 20px;
-  width: 150px;
-  animation: drive 12s linear infinite;
-}
+            .before-after {
+                flex-direction: column;
+                align-items: center;
+            }
 
-@keyframes drive {
-  0% { left: -200px; transform: rotate(0deg); }
-  50% { left: 50%; transform: rotate(2deg); }
-  100% { left: 100%; transform: rotate(0deg); }
-}
-
-/* ---------- SECTIONS ---------- */
-section {
-  padding: 90px 20px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-h3.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  color: var(--dark);
-  text-align: center;
-}
-
-/* ---------- ABOUT ---------- */
-.about p {
-  max-width: 700px;
-  font-size: 1.05rem;
-  margin: auto;
-  text-align: center;
-  line-height: 1.7;
-}
-
-/* ---------- SERVICES ---------- */
-.services {
-  background: var(--gray);
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-  border-top: 4px solid var(--cyan);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-/* ---------- CONSULTATION ---------- */
-form {
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 18px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 1rem;
-  transition: border 0.3s;
-}
-
-input:focus, textarea:focus {
-  border-color: var(--cyan);
-  outline: none;
-}
-
-form button {
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 25px 20px;
-  font-size: 0.95rem;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  nav a {
-    margin-left: 15px;
-  }
-  .logo {
-    height: 50px;
-    margin-left: 10px;
-  }
-  .hero h2 {
-    font-size: 2.2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .car {
-    width: 100px;
-  }
-}
-</style>
+            .before-after img {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <img src="logo.png" alt="Triple M Car Wash Logo">
+        <h1>Triple M Car Wash</h1>
+    </header>
 
-<!-- NAVBAR -->
-<header>
-  <div class="nav">
-    <div>
-      <h1>Triple M Car Wash</h1>
-      <span>Miami, Florida</span>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>PREMIUM CAR WASH & DETAILING</h1>
+        <p>Get Your Car Sparkling Clean!</p>
+        <a href="#contact" class="btn">Book Your Appointment</a>
+    </section>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#consultation">Consultation</a>
-      <img src="https://scontent-atl3-2.cdninstagram.com/v/t51.2885-19/482700740_522779690851369_5615127440565647210_n.jpg" alt="Triple M Car Wash Logo" class="logo">
-    </nav>
-  </div>
-</header>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-item">
+            <img src="exterior-wash.jpg" alt="Exterior Wash">
+            <h3>Exterior Wash</h3>
+            <p>Complete exterior wash & wax</p>
+        </div>
+        <div class="service-item">
+            <img src="interior-detailing.jpg" alt="Interior Detailing">
+            <h3>Interior Detailing</h3>
+            <p>Deep cleaning of seats, carpets & dashboard</p>
+        </div>
+        <div class="service-item">
+            <img src="full-detailing.jpg" alt="Full Detailing">
+            <h3>Full Detailing</h3>
+            <p>Inside & out, full car detail</p>
+        </div>
+    </section>
 
-<!-- HOME -->
-<section class="hero" id="home">
-  <h2>Luxury Car Wash & Detailing</h2>
-  <p>Premium care for your vehicle in Miami, Florida</p>
-  <a href="#consultation" class="btn">Request a Consultation</a>
-  <!-- Animated van -->
-  <img src="https://cdn-icons-png.flaticon.com/512/809/809957.png" alt="Van" class="car">
-</section>
+    <!-- Before & After Gallery -->
+    <section class="gallery" id="gallery">
+        <h2>Before & After</h2>
+        <div class="before-after">
+            <img src="before1.jpg" alt="Before 1">
+            <img src="after1.jpg" alt="After 1">
+        </div>
+        <div class="before-after">
+            <img src="before2.jpg" alt="Before 2">
+            <img src="after2.jpg" alt="After 2">
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container">
-    <h3 class="section-title">About Triple M</h3>
-    <p>
-      Triple M Car Wash delivers high-end car wash and detailing services
-      with precision, care, and professionalism. We combine modern techniques,
-      premium products, and attention to detail to keep your vehicle looking flawless.
-    </p>
-  </div>
-</section>
+    <!-- Customer Reviews Section -->
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <p>"My car looks brand new! Amazing service!" — Sarah L.</p>
+        <p>"Best car wash in town. Highly recommend!" — James R.</p>
+    </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="container">
-    <h3 class="section-title">Our Services</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>Exterior Wash</h4>
-        <p>Gentle hand wash with premium cleaning products.</p>
-      </div>
-      <div class="card">
-        <h4>Interior Detailing</h4>
-        <p>Deep interior cleaning for a spotless finish.</p>
-      </div>
-      <div class="card">
-        <h4>Full Detail</h4>
-        <p>Complete inside & out detailing for maximum shine.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONSULTATION -->
-<section id="consultation">
-  <div class="container">
-    <h3 class="section-title">Request a Consultation</h3>
-    <form id="consultForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Tell us about your vehicle" required></textarea>
-      <button class="btn" type="submit">Submit Request</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2025 Triple M Car Wash • Miami, FL
-</footer>
-
-<script>
-document.getElementById("consultForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  alert("Thank you! Triple M Car Wash will contact you shortly.");
-});
-</script>
-
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+        </div>
+    </section>
 </body>
 </html>
+
