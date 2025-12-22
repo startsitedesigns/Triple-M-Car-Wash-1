@@ -1,283 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Triple M Car Wash | Premium Auto Detailing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triple M Car Wash</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS Styles -->
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
 
-<!-- Icons -->
-<script src="https://kit.fontawesome.com/a2e0e6ad74.js" crossorigin="anonymous"></script>
+    body {
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+      color: #000;
+      overflow-x: hidden;
+    }
 
-<style>
-:root {
-  --cyan: #00d4ff;
-  --dark: #0b0f14;
-  --gray: #f2f4f7;
-  --white: #ffffff;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #00bcd4;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: slideDown 1s ease-out forwards;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
 
-body {
-  background: var(--white);
-  color: var(--dark);
-  scroll-behavior: smooth;
-}
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00bcd4;
+      animation: logoPop 1s ease-out forwards;
+    }
 
-/* NAV */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 18px 60px;
-  background: rgba(11,15,20,0.9);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
+    @keyframes logoPop {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
 
-nav img {
-  height: 42px;
-}
+    header h1 {
+      font-size: 2rem;
+      color: #ffffff;
+      text-shadow: 2px 2px #000000;
+    }
 
-nav a {
-  color: white;
-  margin-left: 25px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-nav a:hover {
-  color: var(--cyan);
-}
+    nav a:hover {
+      color: #ffeb3b;
+      transform: scale(1.1);
+    }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)),
-  url("https://images.unsplash.com/photo-1605559424843-9e4c5b5f3b13") center/cover;
-  display: flex;
-  align-items: center;
-  padding: 0 60px;
-  color: white;
-}
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1591314528706-43f88a8725f8?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+    }
 
-.hero h1 {
-  font-size: 3.5rem;
-  line-height: 1.2;
-  animation: slideUp 1.2s ease;
-}
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
 
-.hero span {
-  color: var(--cyan);
-}
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 2s ease-out forwards;
+    }
 
-.hero p {
-  margin: 20px 0;
-  max-width: 520px;
-  opacity: 0.9;
-}
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
-.btn {
-  padding: 14px 32px;
-  background: var(--cyan);
-  color: black;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
-}
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ffff;
+    }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0,212,255,0.4);
-}
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
 
-/* SECTIONS */
-section {
-  padding: 90px 60px;
-}
+    .hero button {
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,188,212,0.4);
+    }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 60px;
-}
+    .hero button:hover {
+      background: #00ffff;
+      transform: scale(1.1);
+    }
 
-.section-title h2 {
-  font-size: 2.4rem;
-}
+    /* About Section */
+    .about {
+      padding: 80px 50px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 50px;
+      background: #ffffff;
+    }
 
-.section-title span {
-  color: var(--cyan);
-}
+    .about img {
+      width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: slideRight 1.5s ease-out forwards;
+    }
 
-/* SERVICES */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
+    @keyframes slideRight {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
 
-.card {
-  background: var(--gray);
-  padding: 35px;
-  border-radius: 18px;
-  transition: 0.4s;
-}
+    .about-text {
+      flex: 1;
+      animation: slideLeft 1.5s ease-out forwards;
+    }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
+    @keyframes slideLeft {
+      0% { transform: translateX(100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
 
-.card i {
-  font-size: 2.5rem;
-  color: var(--cyan);
-  margin-bottom: 15px;
-}
+    .about h2 {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 20px;
+    }
 
-/* BEFORE AFTER */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333333;
+    }
 
-.gallery img {
-  width: 100%;
-  border-radius: 16px;
-  transition: 0.3s;
-}
+    /* Gallery Section */
+    .gallery {
+      padding: 80px 50px;
+      background: #e0f7fa;
+      text-align: center;
+    }
 
-.gallery img:hover {
-  transform: scale(1.05);
-}
+    .gallery h2 {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 50px;
+    }
 
-/* CONTACT */
-form {
-  max-width: 600px;
-  margin: auto;
-  display: grid;
-  gap: 18px;
-}
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-input, textarea {
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
+    .gallery-container img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.5s;
+    }
 
-textarea {
-  min-height: 120px;
-}
+    .gallery-container img:hover {
+      transform: scale(1.1);
+    }
 
-footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
+    /* Contact Section */
+    .contact {
+      padding: 80px 50px;
+      background: #ffffff;
+      text-align: center;
+    }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .contact h2 {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 30px;
+    }
 
-@media(max-width: 768px) {
-  nav { padding: 15px 30px; }
-  section { padding: 70px 30px; }
-  .hero h1 { font-size: 2.5rem; }
-}
-</style>
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact input, .contact textarea {
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .contact button {
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      background: #00bcd4;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact button:hover {
+      background: #00ffff;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 50px;
+      background: #00bcd4;
+      color: #fff;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    /* Animations for scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: 1s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav>
-  <img src="logo.png" alt="Triple M Car Wash Logo">
-  <div>
-    <a href="#services">Services</a>
-    <a href="#gallery">Before & After</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+  <!-- Header -->
+  <header>
+    <h1>Triple M Car Wash</h1>
+    <img src="https://images.unsplash.com/photo-1611928590432-d1b64d944c5d?auto=format&fit=crop&w=80&q=80" alt="Triple M Car Wash Logo">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>Triple M <span>Car Wash</span><br>Clean That Speaks Quality</h1>
-    <p>Professional exterior washes, detailing, and premium finishes that make your car look brand new.</p>
-    <a href="#contact" class="btn">Book a Wash</a>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-title">
-    <h2>Our <span>Services</span></h2>
-  </div>
-
-  <div class="services">
-    <div class="card">
-      <i class="fas fa-car"></i>
-      <h3>Exterior Wash</h3>
-      <p>High-pressure wash with premium soap and spotless finish.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Premium Car Wash in Miami, FL</h2>
+      <p>We make your car shine like new! Fast, reliable, and affordable services with a touch of professional care.</p>
+      <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Request a Consultation</button>
     </div>
-    <div class="card">
-      <i class="fas fa-soap"></i>
-      <h3>Interior Detailing</h3>
-      <p>Deep vacuum, dashboard polish, and interior refresh.</p>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443d11?auto=format&fit=crop&w=600&q=80" alt="Car Wash">
+    <div class="about-text">
+      <h2>About Triple M Car Wash</h2>
+      <p>Triple M Car Wash is dedicated to providing top-notch car cleaning services. Our team uses the latest technology and eco-friendly products to ensure your car looks its absolute best. From a quick wash to a full detailing, we treat every vehicle like our own.</p>
     </div>
-    <div class="card">
-      <i class="fas fa-spray-can-sparkles"></i>
-      <h3>Full Detail</h3>
-      <p>Complete inside & outside detailing for maximum shine.</p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery" id="gallery">
+    <h2>Before & After</h2>
+    <div class="gallery-container">
+      <img src="https://images.unsplash.com/photo-1571607382097-bad1f69f45c0?auto=format&fit=crop&w=500&q=80" alt="Before Car Wash">
+      <img src="https://images.unsplash.com/photo-1571607382035-2bbf087b6d53?auto=format&fit=crop&w=500&q=80" alt="After Car Wash">
+      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443d11?auto=format&fit=crop&w=500&q=80" alt="Car Shine">
+      <img src="https://images.unsplash.com/photo-1563729784477-00a4bda2e11e?auto=format&fit=crop&w=500&q=80" alt="Professional Cleaning">
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- BEFORE AFTER -->
-<section id="gallery">
-  <div class="section-title">
-    <h2>Before & <span>After</span></h2>
-  </div>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Request a Consultation</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Phone Number" required>
+      <textarea rows="5" placeholder="Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
-  <div class="gallery">
-    <img src="/mnt/data/5c99f9af-9d41-47eb-8237-552c90c90e03.png" alt="Before Cleaning">
-    <img src="/mnt/data/5c99f9af-9d41-47eb-8237-552c90c90e03.png" alt="After Cleaning">
-  </div>
-</section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Triple M Car Wash. All rights reserved.</p>
+  </footer>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-title">
-    <h2>Get in <span>Touch</span></h2>
-  </div>
+  <!-- JavaScript for Scroll Animations -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
 
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <textarea placeholder="Message"></textarea>
-    <button class="btn" type="submit">Send Message</button>
-  </form>
-</section>
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
 
-<footer>
-  © 2025 Triple M Car Wash. All Rights Reserved.
-</footer>
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
 
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 </body>
 </html>
