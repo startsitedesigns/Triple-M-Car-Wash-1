@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Triple M Car Wash</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- CSS Styles -->
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -24,6 +23,7 @@
       overflow-x: hidden;
     }
 
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -135,80 +135,6 @@
       transform: scale(1.1);
     }
 
-    /* About Section */
-    .about {
-      padding: 80px 50px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 50px;
-      background: #ffffff;
-    }
-
-    .about img {
-      width: 500px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      animation: slideRight 1.5s ease-out forwards;
-    }
-
-    @keyframes slideRight {
-      0% { transform: translateX(-100px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-
-    .about-text {
-      flex: 1;
-      animation: slideLeft 1.5s ease-out forwards;
-    }
-
-    @keyframes slideLeft {
-      0% { transform: translateX(100px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-
-    .about h2 {
-      font-size: 2rem;
-      color: #00bcd4;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #333333;
-    }
-
-    /* Gallery Section */
-    .gallery {
-      padding: 80px 50px;
-      background: #e0f7fa;
-      text-align: center;
-    }
-
-    .gallery h2 {
-      font-size: 2rem;
-      color: #00bcd4;
-      margin-bottom: 50px;
-    }
-
-    .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .gallery-container img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: transform 0.5s;
-    }
-
-    .gallery-container img:hover {
-      transform: scale(1.1);
-    }
-
     /* Contact Section */
     .contact {
       padding: 80px 50px;
@@ -264,18 +190,6 @@
     footer p {
       font-size: 1rem;
     }
-
-    /* Animations for scroll */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: 1s ease-out;
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
   </style>
 </head>
 <body>
@@ -283,10 +197,8 @@
   <!-- Header -->
   <header>
     <h1>Triple M Car Wash</h1>
-    <img src="https://images.unsplash.com/photo-1611928590432-d1b64d944c5d?auto=format&fit=crop&w=80&q=80" alt="Triple M Car Wash Logo">
+    <img src="https://scontent-atl3-2.cdninstagram.com/v/t51.2885-19/482700740_522779690851369_5615127440565647210_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2QFtWtl7wu1os1hdnQOMsYcGEsW-uweJ00vAWHiw42dzzb7UO7ZmfGUFiG3tLRCyQC0&_nc_ohc=WrPVpF_IvSYQ7kNvwE74Xyn&_nc_gid=W5L-xmt1-ZlDmtC2XLUYWA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afk1MwgkIP_yPMM-pTOq4K_mWHaa4SXqv_qKV7zMSjTfcg&oe=694E48D2&_nc_sid=7a9f4b" alt="Triple M Car Wash Logo">
     <nav>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -297,26 +209,6 @@
       <h2>Premium Car Wash in Miami, FL</h2>
       <p>We make your car shine like new! Fast, reliable, and affordable services with a touch of professional care.</p>
       <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Request a Consultation</button>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about" id="about">
-    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443d11?auto=format&fit=crop&w=600&q=80" alt="Car Wash">
-    <div class="about-text">
-      <h2>About Triple M Car Wash</h2>
-      <p>Triple M Car Wash is dedicated to providing top-notch car cleaning services. Our team uses the latest technology and eco-friendly products to ensure your car looks its absolute best. From a quick wash to a full detailing, we treat every vehicle like our own.</p>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section class="gallery" id="gallery">
-    <h2>Before & After</h2>
-    <div class="gallery-container">
-      <img src="https://images.unsplash.com/photo-1571607382097-bad1f69f45c0?auto=format&fit=crop&w=500&q=80" alt="Before Car Wash">
-      <img src="https://images.unsplash.com/photo-1571607382035-2bbf087b6d53?auto=format&fit=crop&w=500&q=80" alt="After Car Wash">
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443d11?auto=format&fit=crop&w=500&q=80" alt="Car Shine">
-      <img src="https://images.unsplash.com/photo-1563729784477-00a4bda2e11e?auto=format&fit=crop&w=500&q=80" alt="Professional Cleaning">
     </div>
   </section>
 
@@ -337,26 +229,5 @@
     <p>&copy; 2025 Triple M Car Wash. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Scroll Animations -->
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add('show');
-        appearOnScroll.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  </script>
 </body>
 </html>
