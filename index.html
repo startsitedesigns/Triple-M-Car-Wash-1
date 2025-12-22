@@ -8,9 +8,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- CSS Styles -->
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -34,12 +32,6 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      animation: slideDown 1s ease-out forwards;
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
     }
 
     header img {
@@ -47,13 +39,6 @@
       height: 80px;
       border-radius: 50%;
       box-shadow: 0 0 20px #00ffff, 0 0 40px #00bcd4;
-      animation: logoPop 1s ease-out forwards;
-    }
-
-    @keyframes logoPop {
-      0% { transform: scale(0); opacity: 0; }
-      60% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); }
     }
 
     header h1 {
@@ -75,7 +60,6 @@
       transform: scale(1.1);
     }
 
-    /* Hero Section */
     .hero {
       height: 100vh;
       background: url('https://images.unsplash.com/photo-1591314528706-43f88a8725f8?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
@@ -98,12 +82,6 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      animation: fadeInUp 2s ease-out forwards;
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(50px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
 
     .hero h2 {
@@ -135,7 +113,6 @@
       transform: scale(1.1);
     }
 
-    /* About Section */
     .about {
       padding: 80px 50px;
       display: flex;
@@ -149,22 +126,10 @@
       width: 500px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      animation: slideRight 1.5s ease-out forwards;
-    }
-
-    @keyframes slideRight {
-      0% { transform: translateX(-100px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
     }
 
     .about-text {
       flex: 1;
-      animation: slideLeft 1.5s ease-out forwards;
-    }
-
-    @keyframes slideLeft {
-      0% { transform: translateX(100px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
     }
 
     .about h2 {
@@ -179,7 +144,6 @@
       color: #333333;
     }
 
-    /* Gallery Section */
     .gallery {
       padding: 80px 50px;
       background: #e0f7fa;
@@ -209,7 +173,6 @@
       transform: scale(1.1);
     }
 
-    /* Contact Section */
     .contact {
       padding: 80px 50px;
       background: #ffffff;
@@ -253,28 +216,11 @@
       transform: scale(1.05);
     }
 
-    /* Footer */
     footer {
       padding: 30px 50px;
       background: #00bcd4;
       color: #fff;
       text-align: center;
-    }
-
-    footer p {
-      font-size: 1rem;
-    }
-
-    /* Animations for scroll */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: 1s ease-out;
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
     }
   </style>
 </head>
@@ -283,8 +229,7 @@
   <!-- Header -->
   <header>
     <h1>Triple M Car Wash</h1>
-    <!-- Logo points to local file -->
-    <img src="images/logo.png" alt="Triple M Car Wash Logo">
+    <img src="https://i.postimg.cc/4dj7H5M0/482700740-522779690851369-5615127440565647210-n.jpg" alt="Triple M Car Wash Logo">
     <nav>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -292,7 +237,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h2>Premium Car Wash in Miami, FL</h2>
@@ -301,7 +245,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section class="about" id="about">
     <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443d11?auto=format&fit=crop&w=600&q=80" alt="Car Wash">
     <div class="about-text">
@@ -310,7 +253,6 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
   <section class="gallery" id="gallery">
     <h2>Before & After</h2>
     <div class="gallery-container">
@@ -321,7 +263,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2>Request a Consultation</h2>
     <form>
@@ -333,31 +274,9 @@
     </form>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Triple M Car Wash. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Scroll Animations -->
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add('show');
-        appearOnScroll.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  </script>
 </body>
 </html>
