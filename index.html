@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samarth's Car Wash</title>
+  <title>Triple M Car Wash</title>
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     }
 
     body {
-      background: linear-gradient(to bottom, #fff8e1, #ffffff);
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
       color: #000;
       overflow-x: hidden;
     }
@@ -29,7 +29,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
-      background: #000000;
+      background: #00bcd4;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -42,17 +42,17 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      box-shadow: 0 0 20px gold, 0 0 40px silver;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00bcd4;
     }
 
     header h1 {
       font-size: 2rem;
-      color: gold;
+      color: #ffffff;
       text-shadow: 2px 2px #000000;
     }
 
     nav a {
-      color: silver;
+      color: #ffffff;
       text-decoration: none;
       margin-left: 30px;
       font-weight: bold;
@@ -60,7 +60,7 @@
     }
 
     nav a:hover {
-      color: gold;
+      color: #ffeb3b;
       transform: scale(1.1);
     }
 
@@ -93,7 +93,7 @@
     .hero h2 {
       font-size: 3rem;
       margin-bottom: 20px;
-      color: gold;
+      color: #00ffff;
     }
 
     .hero p {
@@ -103,19 +103,19 @@
     }
 
     .hero button {
-      background: gold;
-      color: black;
+      background: #00bcd4;
+      color: #fff;
       border: none;
       padding: 15px 30px;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 10px;
       transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+      box-shadow: 0 5px 15px rgba(0,188,212,0.4);
     }
 
     .hero button:hover {
-      background: silver;
+      background: #00ffff;
       transform: scale(1.1);
     }
 
@@ -133,7 +133,7 @@
     .about img {
       width: 100%;
       max-width: 500px;
-      max-height: 250px;
+      max-height: 250px; /* prevents tall stretching on phones */
       object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -146,7 +146,7 @@
 
     .about h2 {
       font-size: 2rem;
-      color: black;
+      color: #00bcd4;
       margin-bottom: 20px;
     }
 
@@ -159,13 +159,13 @@
     /* Gallery Section */
     .gallery {
       padding: 80px 20px;
-      background: #fff8e1;
+      background: #e0f7fa;
       text-align: center;
     }
 
     .gallery h2 {
       font-size: 2rem;
-      color: black;
+      color: #00bcd4;
       margin-bottom: 50px;
     }
 
@@ -195,7 +195,7 @@
 
     .contact h2 {
       font-size: 2rem;
-      color: black;
+      color: #00bcd4;
       margin-bottom: 30px;
     }
 
@@ -219,23 +219,23 @@
       padding: 15px;
       border-radius: 10px;
       border: none;
-      background: gold;
-      color: black;
+      background: #00bcd4;
+      color: #fff;
       font-size: 1rem;
       cursor: pointer;
       transition: 0.3s;
     }
 
     .contact button:hover {
-      background: silver;
+      background: #00ffff;
       transform: scale(1.05);
     }
 
     /* Footer */
     footer {
       padding: 30px 20px;
-      background: #000000;
-      color: gold;
+      background: #00bcd4;
+      color: #fff;
       text-align: center;
     }
 
@@ -261,6 +261,7 @@
         max-width: 90%;
       }
 
+      /* About section stacking on mobile */
       .about {
         flex-direction: column;
         align-items: center;
@@ -270,7 +271,7 @@
 
       .about img {
         max-width: 350px;
-        max-height: 200px;
+        max-height: 200px; /* ensures proper height */
       }
 
       .about-text {
@@ -310,8 +311,8 @@
 
   <!-- Header -->
   <header>
-    <h1>Samarth's Car Wash</h1>
-    <img src="https://i.postimg.cc/4dj7H5M0/482700740-522779690851369-5615127440565647210-n.jpg" alt="Car Wash Logo">
+    <h1>Triple M Car Wash</h1>
+    <img src="https://i.postimg.cc/4dj7H5M0/482700740-522779690851369-5615127440565647210-n.jpg" alt="Triple M Car Wash Logo">
     <nav>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -324,7 +325,7 @@
     <div class="hero-content">
       <h2>Premium Car Wash in Miami, FL</h2>
       <p>We make your car shine like new! Fast, reliable, and affordable services with a touch of professional care.</p>
-      <button onclick="openMailto()">Request a Consultation</button>
+      <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Request a Consultation</button>
     </div>
   </section>
 
@@ -332,8 +333,8 @@
   <section class="about" id="about">
     <img src="https://i.postimg.cc/c1X1zTXq/Screenshot-2025-12-22-180512.png" alt="Car Wash">
     <div class="about-text">
-      <h2>About Samarth's Car Wash</h2>
-      <p>We are dedicated to providing top-notch car cleaning services. Our team uses the latest technology and eco-friendly products to ensure your car looks its absolute best. From a quick wash to a full detailing, we treat every vehicle like our own.</p>
+      <h2>About Triple M Car Wash</h2>
+      <p>Triple M Car Wash is dedicated to providing top-notch car cleaning services. Our team uses the latest technology and eco-friendly products to ensure your car looks its absolute best. From a quick wash to a full detailing, we treat every vehicle like our own.</p>
     </div>
   </section>
 
@@ -349,41 +350,20 @@
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2>Request a Consultation</h2>
-    <form onsubmit="return sendEmail()">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="text" id="phone" placeholder="Phone Number" required>
-      <textarea id="message" rows="5" placeholder="Message" required></textarea>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Phone Number" required>
+      <textarea rows="5" placeholder="Message" required></textarea>
       <button type="submit">Submit</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Samarth's Car Wash. All rights reserved.</p>
+    <p>&copy; 2025 Triple M Car Wash. All rights reserved.</p>
   </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Form submit opens Gmail
-    function sendEmail() {
-      const name = encodeURIComponent(document.getElementById('name').value);
-      const email = encodeURIComponent(document.getElementById('email').value);
-      const phone = encodeURIComponent(document.getElementById('phone').value);
-      const message = encodeURIComponent(document.getElementById('message').value);
-
-      const mailtoLink = `mailto:dhiraj.balaga13@gmail.com?subject=Consultation%20Request&body=Name:%20${name}%0AEmail:%20${email}%0APhone:%20${phone}%0AMessage:%20${message}`;
-      window.open(mailtoLink, '_blank');
-
-      return false;
-    }
-
-    // Hero button directly opens Gmail/mailto
-    function openMailto() {
-      const mailtoLink = `mailto:dhiraj.balaga13@gmail.com?subject=Consultation%20Request&body=Hi,%0A%0AI would like to request a consultation.%0A%0AName:%20%0AEmail:%20%0APhone:%20%0AMessage:%20`;
-      window.open(mailtoLink, '_blank');
-    }
-  </script>
 
 </body>
 </html>
+
