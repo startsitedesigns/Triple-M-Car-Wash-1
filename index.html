@@ -324,7 +324,7 @@
     <div class="hero-content">
       <h2>Premium Car Wash in Miami, FL</h2>
       <p>We make your car shine like new! Fast, reliable, and affordable services with a touch of professional care.</p>
-      <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Request a Consultation</button>
+      <button onclick="openMailto()">Request a Consultation</button>
     </div>
   </section>
 
@@ -365,6 +365,7 @@
 
   <!-- JavaScript -->
   <script>
+    // Form submit opens Gmail
     function sendEmail() {
       const name = encodeURIComponent(document.getElementById('name').value);
       const email = encodeURIComponent(document.getElementById('email').value);
@@ -374,7 +375,13 @@
       const mailtoLink = `mailto:dhiraj.balaga13@gmail.com?subject=Consultation%20Request&body=Name:%20${name}%0AEmail:%20${email}%0APhone:%20${phone}%0AMessage:%20${message}`;
       window.open(mailtoLink, '_blank');
 
-      return false; // prevent form submission
+      return false;
+    }
+
+    // Hero button directly opens Gmail/mailto
+    function openMailto() {
+      const mailtoLink = `mailto:dhiraj.balaga13@gmail.com?subject=Consultation%20Request&body=Hi,%0A%0AI would like to request a consultation.%0A%0AName:%20%0AEmail:%20%0APhone:%20%0AMessage:%20`;
+      window.open(mailtoLink, '_blank');
     }
   </script>
 
